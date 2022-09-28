@@ -7,41 +7,49 @@
 echo "Setting environment variables for NEMSfv3gfs on Linux with gcc/gfortran"
 
 ##
+## enable bash inside container 
+##
+source /usr/share/lmod/6.6/init/bash
+
+##
 ## load programming environment: compiler, flags, paths
 ##
-export CC=${CC:-mpicc}
-export CXX=${CXX:-mpicxx}
-export F77=${F77:-mpif77}
-export F90=${F90:-mpif90}
-export FC=${FC:-mpif90}
+export CC=${CC:-gcc}
+export CXX=${CXX:-g++}
+export F77=${F77:-gfortran}
+export FC=${FC:-gfortran}
 
 ##
 ## set up variables for ../cmake/configure_linux.gnu.cmake
 ##
 export CMAKE_Platform=linux.gnu
 
-##
-## use own NetCDF library
-##
-export NETCDF=${NETCDF:-/home/builder/opt}
+module use /home/builder/spack-stack/envs/ufs-wm-dev.gnu/install/modulefiles/Core
+module load stack-gcc/9.4.0
+module load stack-openmpi/4.0.3
+module load cmake/3.22.1
 
-##
-## use SIONlib library if installed and environment variable is set
-##
-SIONLIB=${SIONLIB:-}
-if [ ! "x$SIONLIB" == "x" ]; then
-  echo "Use SIONlib installation in ${SIONLIB}"
-  export SIONLIB_INC="-I${SIONLIB}/include -I${SIONLIB}/include/mod_64"
-  export SIONLIB_LIB="-L${SIONLIB}/lib -lsionmpi_f90_64 -lsionser_f90_64 -lsionmpi_64 -lsiongen_64 -lsionser_64 -lsioncom_64 -lsioncom_64_lock_none"
-fi
+module load jasper/2.0.25
+module load zlib/1.2.11
+module load libpng/1.6.37
 
-##
-## use pre-compiled EMSF library for above compiler / MPI combination
-##
-export ESMFMKFILE=${ESMFMKFILE:-/home/builder/opt/lib/esmf.mk}
+module load hdf5/1.10.6
+module load netcdf-c/4.7.4
+module load netcdf-fortran/4.5.4
+module load pio/2.5.7
+module load esmf/8.3.0b09
+module load fms/2022.01
 
-##
-## NCEP libraries (need to download and build manually, see doc/README_{UBUNTU,CENTOS,...}.txt and https://github.com/NCAR/NCEPlibs)
-##
-export NCEPLIBS_DIR=${NCEPLIBS_DIR:-/home/builder/opt}
-export CMAKE_PREFIX_PATH=${NCEPLIBS_DIR}
+module load bacio/2.4.1
+module load crtm/2.3.0
+module load g2/3.4.5
+module load g2tmpl/1.10.0
+module load ip/3.3.3
+module load sp/2.3.3
+module load w3emc/2.9.2
+
+module load gftl-shared/1.5.0
+module load yafyaml/0.5.1
+module load mapl/2.22.0-esmf-8.3.0b09-esmf-8.3.0
+
+~
