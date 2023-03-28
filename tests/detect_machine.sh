@@ -104,6 +104,15 @@ case $(hostname -f) in
   login02.expanse.sdsc.edu) MACHINE_ID=expanse ;; ### expanse2
 esac
 
+case $(echo $PW_CSP) in
+
+  aws) PW_CSP_ID=aws ;; ### parallelworks aws
+  google) PW_CSP_ID=gcp ;; ### parallelworks gcp
+  azure) PW_CSP_ID=azure ;; ### parallelworks azure
+  
+esac
+[[ ${PW_CSP_ID} =~ "aws" || ${PW_CSP_ID} =~ "gcp" || ${PW_CSP_ID} =~ "azure" ]] && MACHINE_ID=noaacloud
+
 # Overwrite auto-detect with RT_MACHINE if set
 MACHINE_ID=${RT_MACHINE:-${MACHINE_ID}}
 
