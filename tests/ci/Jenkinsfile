@@ -13,7 +13,7 @@ pipeline {
                 axes {
                     axis {
                         name 'TEST_NAME'
-                        values 'control_p8'
+                        values 'control_p8', 'cpld_control_nowave_noaero_p8'
                     }
 
                     axis {
@@ -26,12 +26,12 @@ pipeline {
                     exclude {
                         axis {
                             name 'TEST_NAME'
-                            values 'control_p8'
+                            values 'cpld_control_nowave_noaero_p8'
                         }
 
                         axis {
                             name 'TEST_CASE'
-                            values
+                            values 'mpi', 'dcp', 'bit', 'thr' // TODO: Remove thr case from cpld_control_nowave_noaero_p8 exclusions when it is passing again
                             }
                     }
                     exclude {
