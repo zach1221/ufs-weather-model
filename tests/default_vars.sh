@@ -82,7 +82,7 @@
   ocn_omp_num_threads=1
   wav_omp_num_threads=1
 
-if [[ $MACHINE_ID = wcoss2.* || $MACHINE_ID = acorn.* ]]; then
+if [[ $MACHINE_ID = wcoss2 || $MACHINE_ID = acorn ]]; then
 
   TPN=128
 
@@ -95,7 +95,7 @@ if [[ $MACHINE_ID = wcoss2.* || $MACHINE_ID = acorn.* ]]; then
   INPES_cpl_atmw_gdas=6; JNPES_cpl_atmw_gdas=8; WPG_cpl_atmw_gdas=24
   WAV_tasks_atmw_gdas=248
 
-elif [[ $MACHINE_ID = orion.* ]]; then
+elif [[ $MACHINE_ID = orion ]]; then
 
   TPN=40
 
@@ -108,7 +108,7 @@ elif [[ $MACHINE_ID = orion.* ]]; then
   INPES_cpl_atmw_gdas=6; JNPES_cpl_atmw_gdas=8; WPG_cpl_atmw_gdas=24
   WAV_tasks_atmw_gdas=248
 
-elif [[ $MACHINE_ID = hera.* ]]; then
+elif [[ $MACHINE_ID = hera ]]; then
 
   TPN=40
 
@@ -121,7 +121,7 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   INPES_cpl_atmw_gdas=6; JNPES_cpl_atmw_gdas=8; WPG_cpl_atmw_gdas=24
   WAV_tasks_atmw_gdas=248
 
-elif [[ $MACHINE_ID = linux.* ]]; then
+elif [[ $MACHINE_ID = linux ]]; then
 
   TPN=40
 
@@ -140,7 +140,7 @@ elif [[ $MACHINE_ID = linux.* ]]; then
   ICE_tasks_cpl_thrd=10
   WAV_tasks_cpl_thrd=12
 
-elif [[ $MACHINE_ID = jet.* ]]; then
+elif [[ $MACHINE_ID = jet ]]; then
 
   TPN=24
 
@@ -169,7 +169,7 @@ elif [[ $MACHINE_ID = jet.* ]]; then
   WAV_tasks_cpl_c192=80
   WLCLK_cpl_c192=120
 
-elif [[ $MACHINE_ID = s4.* ]]; then
+elif [[ $MACHINE_ID = s4 ]]; then
 
   TPN=32
 
@@ -188,7 +188,7 @@ elif [[ $MACHINE_ID = s4.* ]]; then
   ICE_tasks_cpl_bmrk=48
   WAV_tasks_cpl_bmrk=80
 
-elif [[ $MACHINE_ID = gaea.* ]]; then
+elif [[ $MACHINE_ID = gaea ]]; then
 
   TPN=36
 
@@ -201,7 +201,7 @@ elif [[ $MACHINE_ID = gaea.* ]]; then
   INPES_cpl_atmw_gdas=6; JNPES_cpl_atmw_gdas=8; WPG_cpl_atmw_gdas=24
   WAV_tasks_atmw_gdas=264
 
-elif [[ $MACHINE_ID = cheyenne.* ]]; then
+elif [[ $MACHINE_ID = cheyenne ]]; then
 
   TPN=36
 
@@ -244,7 +244,7 @@ elif [[ $MACHINE_ID = cheyenne.* ]]; then
   ICE_tasks_cpl_bmrk=48
   WAV_tasks_cpl_bmrk=100
 
-elif [[ $MACHINE_ID = stampede.* ]]; then
+elif [[ $MACHINE_ID = stampede ]]; then
 
   echo "Unknown MACHINE_ID ${MACHINE_ID}. Please update tasks configurations in default_vars.sh"
   exit 1
@@ -258,35 +258,7 @@ elif [[ $MACHINE_ID = stampede.* ]]; then
   TPN_cpl_atmw_gdas=12; INPES_cpl_atmw_gdas=6; JNPES_cpl_atmw_gdas=8
   THRD_cpl_atmw_gdas=4; WPG_cpl_atmw_gdas=24; APB_cpl_atmw_gdas="0 311"; WPB_cpl_atmw_gdas="312 559"
 
-elif [[ ${MACHINE_ID} = noaacloud.* ]] ; then
-
-    if [[ $PW_CSP == aws ]]; then
-    TPN=36
-    elif [[ $PW_CSP == azure ]]; then
-    TPN=44
-    elif [[ $PW_CSP == google ]]; then
-    TPN=30
-    fi
-
-    INPES_dflt=3 ; JNPES_dflt=8
-    INPES_thrd=3 ; JNPES_thrd=4
-    
-    INPES_c384=8 ; JNPES_c384=6  ; THRD_c384=2
-    INPES_c768=8 ; JNPES_c768=16 ; THRD_c768=2
-
-    THRD_cpl_dflt=1
-    INPES_cpl_dflt=3; JNPES_cpl_dflt=8; WPG_cpl_dflt=6
-    OCN_tasks_cpl_dflt=20
-    ICE_tasks_cpl_dflt=10
-    WAV_tasks_cpl_dflt=20
-
-    THRD_cpl_thrd=2
-    INPES_cpl_thrd=3; JNPES_cpl_thrd=4; WPG_cpl_thrd=6
-    OCN_tasks_cpl_thrd=20
-    ICE_tasks_cpl_thrd=10
-    WAV_tasks_cpl_thrd=12
-
-elif [[ $MACHINE_ID = expanse.* ]]; then
+elif [[ $MACHINE_ID = expanse ]]; then
 
   echo "Unknown MACHINE_ID ${MACHINE_ID}. Please update tasks configurations in default_vars.sh"
   exit 1
@@ -297,8 +269,7 @@ elif [[ $MACHINE_ID = expanse.* ]]; then
 
   TPN_cpl_atmw_gdas=12; INPES_cpl_atmw_gdas=6; JNPES_cpl_atmw_gdas=8
   THRD_cpl_atmw_gdas=2; WPG_cpl_atmw_gdas=24; APB_cpl_atmw_gdas="0 311"; WPB_cpl_atmw_gdas="312 559"
-  
-  
+
 else
 
   echo "Unknown MACHINE_ID ${MACHINE_ID}"
@@ -314,6 +285,7 @@ export_fv3 ()
 {
 # nems.configure defaults
 export NEMS_CONFIGURE=nems.configure.atm.IN
+export MODEL_CONFIGURE=model_configure.IN
 export atm_model=fv3
 
 export FV3=true
