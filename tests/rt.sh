@@ -9,8 +9,9 @@ die() { echo "$@" >&2; exit 1; }
 usage() {
   set +x
   echo
-  echo "Usage: $0 -c | -e | -h | -k | -w | -d | -l <file> | -m | -n <name> | -r "
+  echo "Usage: $0 -a <account> | -c | -e | -h | -k | -w | -d | -l <file> | -m | -n <name> | -r "
   echo
+  echo "  -a  <account> to use on for HPC queue"
   echo "  -c  create new baseline results"
   echo "  -e  use ecFlow workflow manager"
   echo "  -h  display this help"
@@ -154,7 +155,6 @@ if [[ $MACHINE_ID = wcoss2 ]]; then
   QUEUE=dev
   COMPILE_QUEUE=dev
   PARTITION=
-  ACCNR="${ACCNR:-GFS-DEV}"
   STMP=/lfs/h2/emc/ptmp
   PTMP=/lfs/h2/emc/ptmp
   SCHEDULER=pbs
@@ -177,7 +177,6 @@ elif [[ $MACHINE_ID = acorn ]]; then
   QUEUE=dev
   COMPILE_QUEUE=dev
   PARTITION=
-  ACCNR="${ACCNR:-GFS-DEV}"
   STMP=/lfs/h2/emc/ptmp
   PTMP=/lfs/h2/emc/ptmp
   SCHEDULER=pbs
@@ -194,7 +193,6 @@ elif [[ $MACHINE_ID = gaea ]]; then
   DISKNM=/lustre/f2/pdata/ncep_shared/emc.nemspara/RT
   QUEUE=normal
   COMPILE_QUEUE=normal
-#  ACCNR="${ACCNR:-cmp}"
   PARTITION=c4
   STMP=/lustre/f2/scratch
   PTMP=/lustre/f2/scratch
@@ -221,7 +219,6 @@ elif [[ $MACHINE_ID = hera ]]; then
   QUEUE=batch
   COMPILE_QUEUE=batch
 
-  #ACCNR="${ACCNR:-fv3-cpu}
   PARTITION=
   dprefix=/scratch1/NCEPDEV
   DISKNM=$dprefix/nems/emc.nemspara/RT
@@ -248,7 +245,7 @@ elif [[ $MACHINE_ID = orion ]]; then
   QUEUE=batch
   COMPILE_QUEUE=batch
   PARTITION=orion
-  dprefix=/work/noaa/stmp/${USER}
+  dprefix=/work/noaa/epic-ps/${USER}/rt-1718
   DISKNM=/work/noaa/nems/emc.nemspara/RT
   STMP=$dprefix/stmp
   PTMP=$dprefix/stmp
@@ -272,13 +269,13 @@ elif [[ $MACHINE_ID = jet ]]; then
 
   QUEUE=batch
   COMPILE_QUEUE=batch
-  ACCNR="${ACCNR:-h-nems}"
   PARTITION=xjet
   DISKNM=/mnt/lfs4/HFIP/hfv3gfs/role.epic/RT
   dprefix=${dprefix:-/lfs4/HFIP/$ACCNR/$USER}
   STMP=${STMP:-$dprefix/RT_BASELINE}
   PTMP=${PTMP:-$dprefix/RT_RUNDIRS}
 
+  ACCNR=nems
   SCHEDULER=slurm
   cp fv3_conf/fv3_slurm.IN_jet fv3_conf/fv3_slurm.IN
   cp fv3_conf/compile_slurm.IN_jet fv3_conf/compile_slurm.IN
@@ -299,7 +296,6 @@ elif [[ $MACHINE_ID = s4 ]]; then
   QUEUE=s4
   COMPILE_QUEUE=s4
 
-  ACCNR="${ACCNR:-star}"
   PARTITION=s4
   dprefix=/data/prod
   DISKNM=$dprefix/emc.nemspara/RT
@@ -335,7 +331,6 @@ elif [[ $MACHINE_ID = stampede ]]; then
   QUEUE=skx-normal
   COMPILE_QUEUE=skx-dev
   PARTITION=
-  ACCNR="${ACCNR:-TG-EES200015}"
   dprefix=$SCRATCH/ufs-weather-model/run
   DISKNM=/work2/07736/minsukji/stampede2/ufs-weather-model/RT
   STMP=$dprefix
@@ -352,7 +347,6 @@ elif [[ $MACHINE_ID = expanse ]]; then
   QUEUE=compute
   COMPILE_QUEUE=shared
   PARTITION=
-  ACCNR="${ACCNR:-TG-EES200015}"
   dprefix=/expanse/lustre/scratch/$USER/temp_project/run
   DISKNM=/expanse/lustre/scratch/domh/temp_project/RT
   STMP=$dprefix
@@ -360,16 +354,31 @@ elif [[ $MACHINE_ID = expanse ]]; then
   SCHEDULER=slurm
   cp fv3_conf/fv3_slurm.IN_expanse fv3_conf/fv3_slurm.IN
 
+ elif [[ $MACHINE_ID = noaacloud.* ]]; then
+
+  module use /apps/modules/modulefiles
+  module load rocoto/1.3.3
+
+  ROCOTORUN=$(which rocotorun)
+  ROCOTOSTAT=$(which rocotostat)
+  ROCOTOCOMPLETE=$(which rocotocomplete)
+  ROCOTO_SCHEDULER=slurm
+
+  QUEUE=batch
+  COMPILE_QUEUE=batch
+  PARTITION=
+  dprefix=/lustre/
+  DISKNM=/contrib/ufs-weather-model/RT
+  STMP=$dprefix/stmp4
+  PTMP=$dprefix/stmp2
+  SCHEDULER=slurm
+  cp fv3_conf/fv3_slurm.IN_noaacloud fv3_conf/fv3_slurm.IN
+  cp fv3_conf/compile_slurm.IN_noaacloud fv3_conf/compile_slurm.IN
+
+
 else
   die "Unknown machine ID, please edit detect_machine.sh file"
 fi
-
-# If account is unspecified, assume the machine has a "nems"
-# accounting code.
-export ACCNR="${ACCNR:-nems}"
-
-# Display the machine and account using the format detect_machine.sh used:
-echo "Machine: " $MACHINE_ID "    Account: " $ACCNR
 
 mkdir -p ${STMP}/${USER}
 
@@ -391,8 +400,11 @@ SKIP_ORDER=false
 
 TESTS_FILE='rt.conf'
 
-while getopts ":cl:mn:dwkreh" opt; do
+while getopts ":a:cl:mn:dwkreh" opt; do
   case $opt in
+    a)
+      ACCNR=$OPTARG
+      ;;
     c)
       CREATE_BASELINE=true
       ;;
@@ -457,6 +469,15 @@ while getopts ":cl:mn:dwkreh" opt; do
   esac
 done
 
+ACCNR=${ACCNR:-""}
+if [[ -z "$ACCNR" ]]; then
+  echo "Please use -a <account> to set group account to use on HPC"
+  exit 1
+fi
+
+# Display the machine and account using the format detect_machine.sh used:
+echo "Machine: " $MACHINE_ID "    Account: " $ACCNR
+
 if [[ $SINGLE_NAME != '' ]]; then
   rt_single
   TESTS_FILE=$RT_SINGLE_CONF
@@ -466,8 +487,7 @@ if [[ $TESTS_FILE =~ '35d' ]] || [[ $TESTS_FILE =~ 'weekly' ]]; then
   TEST_35D=true
 fi
 
-
-BL_DATE=99999999
+source bl_date.conf
 
 RTPWD=${RTPWD:-$DISKNM/NEMSfv3gfs/develop-${BL_DATE}}
 
@@ -533,6 +553,10 @@ if [[ $ROCOTO == true ]]; then
   elif [[ $MACHINE_ID = s4 ]]; then
     QUEUE=s4
     COMPILE_QUEUE=s4
+    ROCOTO_SCHEDULER=slurm
+  elif [[ $MACHINE_ID = noaacloud ]]; then
+    QUEUE=batch
+    COMPILE_QUEUE=batch
     ROCOTO_SCHEDULER=slurm
   elif [[ $MACHINE_ID = jet ]]; then
     QUEUE=batch
@@ -726,7 +750,7 @@ EOF
     fi
 
     [[ -e "tests/$TEST_NAME" ]] || die "run test file tests/$TEST_NAME does not exist"
-    [[ $CREATE_BASELINE == true && $CB != *fv3* ]] && continue
+    [[ $CREATE_BASELINE == true && $CB != *baseline* ]] && continue
 
     if [[ ${MACHINES} != '' ]]; then
       if [[ ${MACHINES} == -* ]]; then

@@ -6,7 +6,7 @@
 ### #SBATCH --ntasks=@[TASKS]
 #SBATCH --nodes=@[NODES]
 #SBATCH --ntasks-per-node=@[TPN]
-#SBATCH --time=01:20:00
+#SBATCH --time=@[WLCLK]
 #SBATCH --job-name="@[JBNME]"
 ### #SBATCH --exclusive
 

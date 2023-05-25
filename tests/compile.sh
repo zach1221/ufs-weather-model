@@ -24,7 +24,7 @@ fi
 readonly ARGC=$#
 
 if [[ $ARGC -lt 2 ]]; then
-  echo "Usage: $0 MACHINE_ID [ MAKE_OPT [ BUILD_NR ] [ clean_before ] [ clean_after ] ]"
+  echo "Usage: $0 MACHINE_ID [ MAKE_OPT [ BUILD_NR ] [ COMPILE_NR ] [ RT_COMPILER ] [ clean_before ] [ clean_after ] ]"
   echo Valid MACHINE_IDs:
   echo $( ls -1 ../cmake/configure_* | sed s:.*configure_::g | sed s:\.cmake:: ) | fold -sw72
   exit 1
@@ -32,7 +32,7 @@ else
   MACHINE_ID=$1
   MAKE_OPT=${2:-}
   COMPILE_NR=${3:+_$3}
-  RT_COMPILER=${4:-gnu}
+  RT_COMPILER=${4:-intel}
   clean_before=${5:-YES}
   clean_after=${6:-YES}
 fi
