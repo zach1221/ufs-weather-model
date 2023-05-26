@@ -18,4 +18,4 @@ ENV MACHINE_ID=linux
 ENV ACCRN=$accrn
 
 WORKDIR $HOME/ufs-weather-model/tests
-CMD ./opnReqTest -n $test_name -c $run_case -a $accrn
+CMD ./opnReqTest -n $test_name -c $run_case -a nems
