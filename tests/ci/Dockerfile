@@ -15,7 +15,7 @@ ENV CI_TEST=true
 ENV RT_COMPILER=gnu
 ENV RT_MACHINE=linux
 ENV MACHINE_ID=linux
-ENV ACCRN=$accrn
+ENV ACCNR=nems
 
 WORKDIR $HOME/ufs-weather-model/tests
-CMD ./opnReqTest -n $test_name -c $run_case -a nems
+CMD ./opnReqTest -n $test_name -c $run_case
