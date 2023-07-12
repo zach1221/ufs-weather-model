@@ -43,6 +43,11 @@ def set_directories(job_obj):
         blstore = '/glade/scratch/epicufsrt/GMTB/ufs-weather-model/RT/NEMSfv3gfs'
         rtbldir = '/glade/scratch/epicufsrt/FV3_RT/'\
                  f'REGRESSION_TEST'
+    elif job_obj.machine == 'noaacloud':
+        workdir = '/lustre/autort/pr'
+        blstore = '/baselines/autort/RT/NEMSfv3gfs'
+        rtbldir = '/baselines/autort/FV3_RT/'\
+                 f'REGRESSION_TEST'
     else:
         logger.critical(f'Machine {job_obj.machine} is not supported for this job')
         raise KeyError
@@ -99,10 +104,10 @@ def create_bl_dir(bldir, job_obj):
 
 def run_regression_test(job_obj, pr_repo_loc):
     logger = logging.getLogger('RT/RUN_REGRESSION_TEST')
-    if job_obj.machine != 'hera':
-        rt_command = [[f'cd tests && /bin/bash --login ./rt.sh -e -c', pr_repo_loc]]
-    elif job_obj.machine == 'hera':
+    if job_obj.machine in ('hera','noaacloud'):
         rt_command = [[f'cd tests && /bin/bash --login ./rt.sh -r -c', pr_repo_loc]]
+    else:
+        rt_command = [[f'cd tests && /bin/bash --login ./rt.sh -e -c', pr_repo_loc]]
     job_obj.run_commands(logger, rt_command)
 
 
