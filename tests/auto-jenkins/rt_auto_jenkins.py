@@ -306,7 +306,7 @@ def setup_env():
         os.environ['ACCNR'] = 'SCSG0002'
     elif bool(re.match(re.compile('.+clusternoaa.+'), hostname)):
         machine = 'noaacloud'
-        os.environ['ACCNR'] = 'epic'
+        os.environ['ACCNR'] = 'root'
     else:
         raise KeyError(f'Hostname: {hostname} does not match '\
                         'for a supported system. Exiting.')
