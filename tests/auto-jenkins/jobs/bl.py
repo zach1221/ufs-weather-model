@@ -45,8 +45,8 @@ def set_directories(job_obj):
                  f'REGRESSION_TEST'
     elif job_obj.machine == 'noaacloud':
         workdir = '/lustre/autort/pr'
-        blstore = '/baselines/autort/RT/NEMSfv3gfs'
-        rtbldir = '/baselines/autort/FV3_RT/'\
+        blstore = '/contrib/ufs-weather-model/RT/NEMSfv3gfs'
+        rtbldir = '/lustre/FV3_RT/'\
                  f'REGRESSION_TEST'
     else:
         logger.critical(f'Machine {job_obj.machine} is not supported for this job')
