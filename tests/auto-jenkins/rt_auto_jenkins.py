@@ -83,6 +83,8 @@ def delete_pr_dirs(each_pr, machine):
         workdir = '/work/noaa/epic-ps/role-epic-ps/autort/pr'
     elif machine == 'cheyenne':
         workdir = '/glade/scratch/epicufsrt/autort/jenkins/autort/pr'
+    elif machine == 'noaacloud':
+        workdir = '/lustre/autort/pr'
     else:
         logging.error(f'Machine {machine} is not supported for this job')
         raise KeyError
@@ -118,6 +120,8 @@ def delete_rt_dirs(in_dir, machine, workdir):
         rt_dir = '/work/noaa/stmp/bcurtis/stmp/bcurtis/FV3_RT'
     elif machine == 'cheyenne':
         rt_dir = '/glade/scratch/epicufsrt/FV3_RT'
+    elif machine == 'noaacloud':
+        rt_dir = '/lustre/autort/FV3_RT'
     else:
         logging.error(f'Machine {machine} is not supported for this job')
         raise KeyError
@@ -300,6 +304,9 @@ def setup_env():
     elif bool(re.match(re.compile('chadmin.+'), hostname)):
         machine = 'cheyenne'
         os.environ['ACCNR'] = 'SCSG0002'
+    elif bool(re.match(re.compile('.+clusternoaa.+'), hostname)):
+        machine = 'noaacloud'
+        os.environ['ACCNR'] = 'epic'
     else:
         raise KeyError(f'Hostname: {hostname} does not match '\
                         'for a supported system. Exiting.')
