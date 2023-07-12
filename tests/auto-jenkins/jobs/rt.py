@@ -33,6 +33,8 @@ def set_directories(job_obj):
         workdir = '/work/noaa/epic-ps/role-epic-ps/autort/tests/auto/pr'
     elif job_obj.machine == 'cheyenne':
         workdir = '/glade/scratch/epicufsrt/autort/jenkins/autort/pr'
+    elif job_obj.machine == 'noaacloud':
+        workdir = '/lustre/autort/pr'
     else:
         print(f'Machine {job_obj.machine} is not supported for this job')
         raise KeyError
@@ -45,10 +47,10 @@ def set_directories(job_obj):
 
 def run_regression_test(job_obj, pr_repo_loc):
     logger = logging.getLogger('RT/RUN_REGRESSION_TEST')
-    if job_obj.machine != 'hera':
-        rt_command = [[f'cd tests && /bin/bash --login ./rt.sh -e', pr_repo_loc]]
-    elif job_obj.machine == 'hera':
+    if job_obj.machine in ('hera','noaacloud'):
         rt_command = [[f'cd tests && /bin/bash --login ./rt.sh -r', pr_repo_loc]]
+    else:
+        rt_command = [[f'cd tests && /bin/bash --login ./rt.sh -e', pr_repo_loc]]
     job_obj.run_commands(logger, rt_command)
 
 
