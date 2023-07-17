@@ -1,7 +1,7 @@
-Mon Jul 17 18:01:58 UTC 2023
+Mon Jul 17 21:46:18 UTC 2023
 Start Regression test
 
-Testing UFSWM Hash: 412a829b01d0804207ea8d56368fec003a91e031
+Testing UFSWM Hash: 369826efe42fac831dfef7cab0086db142de48fe
 Testing With Submodule Hashes:
  37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
  2aa6bfbb62ebeecd7da964b8074f6c3c41c7d1eb CDEPS-interface/CDEPS (cdeps0.4.17-38-g2aa6bfb)
@@ -15,10 +15,10 @@ Testing With Submodule Hashes:
  e1260f1ee711f66a1141010d13511a69c0f8637b NOAHMP-interface/noahmp (v3.7.1-292-ge1260f1)
  c4b116886b5ef9af5fb4942d7161074df3402732 WW3 (6.07.1-325-gc4b1168)
  3bfa4468d85e5b63980c28434f494967f38b10a3 stochastic_physics (ufs-v2.0.0-171-g3bfa446)
-Compile 2_intel elapsed time 744 seconds. -DAPP=S2SWA -DCCPP_SUITES=FV3_GFS_v17_coupled_p8 -DMPI=ON -DCMAKE_BUILD_TYPE=Release -DMOM6SOLO=ON
+Compile 2_intel elapsed time 682 seconds. -DAPP=S2SWA -DCCPP_SUITES=FV3_GFS_v17_coupled_p8 -DMPI=ON -DCMAKE_BUILD_TYPE=Release -DMOM6SOLO=ON
 
 baseline dir = /contrib/ufs-weather-model/RT/NEMSfv3gfs/develop-20230705/cpld_control_p8_intel
-working dir  = /lustre//stmp2/Kristopher.Booker/FV3_RT/rt_1407/cpld_control_p8_intel
+working dir  = /lustre//stmp2/Kristopher.Booker/FV3_RT/rt_10290/cpld_control_p8_intel
 Checking test 001 cpld_control_p8_intel results ....
 Moving baseline 001 cpld_control_p8_intel files ....
  Moving sfcf021.tile1.nc .........OK
@@ -84,12 +84,12 @@ Moving baseline 001 cpld_control_p8_intel files ....
  Moving 20210323.060000.out_pnt.ww3 .........OK
  Moving 20210323.060000.out_grd.ww3 .........OK
 
-  0: The total amount of wall time                        = 391.466867
-  0: The maximum resident set size (KB)                   = 3236512
+  0: The total amount of wall time                        = 381.308379
+  0: The maximum resident set size (KB)                   = 1883800
 
 Test 001 cpld_control_p8_intel PASS
 
 
 REGRESSION TEST WAS SUCCESSFUL
-Mon Jul 17 18:33:25 UTC 2023
-Elapsed time: 00h:31m:27s. Have a nice day!
+Mon Jul 17 22:13:00 UTC 2023
+Elapsed time: 00h:26m:42s. Have a nice day!
