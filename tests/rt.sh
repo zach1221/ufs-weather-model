@@ -428,6 +428,10 @@ elif [[ $MACHINE_ID = expanse ]]; then
 
  elif [[ $MACHINE_ID = noaacloud ]]; then
 
+  export PATH=/contrib/EPIC/bin:$PATH
+  module use /apps/modules/modulefiles
+  module load rocoto/1.3.3
+
   QUEUE=batch
   COMPILE_QUEUE=batch
   PARTITION=
