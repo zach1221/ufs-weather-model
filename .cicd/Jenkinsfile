@@ -121,6 +121,7 @@ pipeline {
        agent {
         label 'built-in'   
        }
+      // Pedantic comment.
       steps {
         script {
           if (CHOICE_NODE == 'azclusternoaav2use1') {
