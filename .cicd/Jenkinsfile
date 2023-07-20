@@ -67,15 +67,8 @@ pipeline {
             }
           }
         }
-         checkout([
-        $class: 'GitSCM', 
-        branches: [[name: '*/$BRANCH']], 
-        doGenerateSubmoduleConfigurations: false, 
-        extensions: [
-           [$class: 'CleanBeforeCheckout']],
-        submoduleCfg: [], 
-        userRemoteConfigs: [[url: "${GIT_URL}" ]]
-    ])
+        cleanWs()
+        checkout scm
         sh '''
         pwd
         git submodule update --init --recursive
