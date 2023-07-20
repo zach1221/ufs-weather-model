@@ -1,8 +1,5 @@
 pipeline {
   agent none
-  parameters {
-    string(name: 'BRANCH', defaultValue: 'develop', description: '')
-  }
   stages {
     stage('Start Parallelworks Cluster') {
        agent {
