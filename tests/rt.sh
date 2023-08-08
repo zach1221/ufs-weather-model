@@ -426,7 +426,7 @@ elif [[ $MACHINE_ID = expanse ]]; then
   PTMP=$dprefix
   SCHEDULER=slurm
 
- elif [[ $MACHINE_ID = noaacloud.* ]]; then
+ elif [[ $MACHINE_ID = noaacloud ]]; then
 
   module use /apps/modules/modulefiles
   module load rocoto/1.3.3
@@ -502,7 +502,10 @@ echo "Start Regression test" >> ${REGRESSIONTEST_LOG}
 echo                         >> ${REGRESSIONTEST_LOG}
 echo "Testing UFSWM Hash:" `git rev-parse HEAD` >> ${REGRESSIONTEST_LOG}
 echo "Testing With Submodule Hashes:" >> ${REGRESSIONTEST_LOG}
+cd ..
 git submodule status >> ${REGRESSIONTEST_LOG}
+
+cd tests
 
 source default_vars.sh
 
