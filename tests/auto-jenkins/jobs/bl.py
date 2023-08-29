@@ -35,7 +35,7 @@ def set_directories(job_obj):
                  f'REGRESSION_TEST'
     elif job_obj.machine == 'orion':
         workdir = '/work/noaa/epic-ps/role-epic-ps/autort/tests/auto/pr'
-        blstore = '/work2/noaa/epic-ps/RT/NEMSfv3gfs'
+        blstore = '/work/noaa/epic/UFS-WM_RT/NEMSfv3gfs'
         rtbldir = '/work/noaa/stmp/role-epic-ps/stmp/role-epic-ps/FV3_RT/'\
                  f'REGRESSION_TEST'
     elif job_obj.machine == 'cheyenne':
