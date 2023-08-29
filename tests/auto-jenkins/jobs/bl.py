@@ -30,7 +30,7 @@ def set_directories(job_obj):
                  f'emc.nemspara/FV3_RT/REGRESSION_TEST'
     elif job_obj.machine == 'gaea':
         workdir = '/lustre/f2/pdata/ncep/emc.nemspara/autort/pr'
-        blstore = '/lustre/f2/pdata/ncep_shared/emc.nemspara/RT/NEMSfv3gfs'
+        blstore = '/lustre/f2/pdata/ncep/role.epic/RT/NEMSfv3gfs'
         rtbldir = '/lustre/f2/scratch/emc.nemspara/FV3_RT/'\
                  f'REGRESSION_TEST'
     elif job_obj.machine == 'orion':
