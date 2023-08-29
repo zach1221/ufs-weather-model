@@ -337,7 +337,7 @@ elif [[ $MACHINE_ID = orion ]]; then
   COMPILE_QUEUE=batch
   PARTITION=orion
   dprefix=/work/noaa/stmp/${USER}
-  DISKNM=/work/noaa/nems/emc.nemspara/RT
+  DISKNM=/work/noaa/epic/UFS-WM_RT
   STMP=$dprefix/stmp
   PTMP=$dprefix/stmp
 
