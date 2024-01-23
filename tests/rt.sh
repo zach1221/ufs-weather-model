@@ -314,7 +314,7 @@ elif [[ $MACHINE_ID = gaea ]]; then
   ROCOTO_SCHEDULER=slurm
 
   module use /ncrc/proj/epic/miniconda3/modulefiles
-  miniconda3/4.12.0
+  module load miniconda3/4.12.0
   module load PrgEnv-intel/8.3.3
   module load intel-classic/2023.1.0
   module load cray-mpich/8.1.25
