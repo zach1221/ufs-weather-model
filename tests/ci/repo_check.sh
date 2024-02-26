@@ -63,6 +63,26 @@ cmake[repo]='https://github.com/NOAA-EMC/CMakeModules'
 cmake[branch]='develop'
 cmake[dir]='CMakeModules'
 
+# Base branch: this is the top of develop of fv3atm
+base[repo]='https://github.com/NOAA-EMC/fv3atm'
+base[branch]='develop'
+
+ccpp-framework[repo]='https://github.com/NCAR/ccpp-framework'
+ccpp-framework[branch]='main'
+ccpp-framework[dir]='ccpp/framework'
+
+ccpp-physics[repo]='https://github.com/ufs-community/ccpp-physics'
+ccpp-physics[branch]='ufs/dev'
+ccpp-physics[dir]='ccpp/physics'
+
+upp[repo]='https://github.com/NOAA-EMC/UPP'
+upp[branch]='develop'
+upp[dir]='upp'
+
+atmos_cubed_sphere[repo]='https://github.com/NOAA-GFDL/GFDL_atmos_cubed_sphere'
+atmos_cubed_sphere[branch]='main'
+atmos_cubed_sphere[dir]='atmos_cubed_sphere'
+
 # Get sha-1's of the top of develop of ufs-weather-model
 app="Accept: application/vnd.github.v3+json"
 url="https://api.github.com/repos/ufs-community/ufs-weather-model/branches/develop"
