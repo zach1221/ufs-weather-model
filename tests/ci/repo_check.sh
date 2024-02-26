@@ -39,12 +39,12 @@ ww3[repo]='https://github.com/NOAA-EMC/WW3'
 ww3[branch]='dev/ufs-weather-model'
 ww3[dir]='WW3'
 
-stoch[repo]='https://github.com/noaa-psd/stochastic_physics'
+stoch[repo]='https://github.com/noaa-psl/stochastic_physics'
 stoch[branch]='master'
 stoch[dir]='stochastic_physics'
 
 gocart[repo]='https://github.com/GEOS-ESM/GOCART'
-gocart[branch]='develop'
+gocart[branch]='main'
 gocart[dir]='GOCART'
 
 cmeps[repo]='https://github.com/NOAA-EMC/CMEPS'
@@ -62,10 +62,6 @@ hycom[dir]='HYCOM-interface/HYCOM'
 cmake[repo]='https://github.com/NOAA-EMC/CMakeModules'
 cmake[branch]='develop'
 cmake[dir]='CMakeModules'
-
-# Base branch: this is the top of develop of fv3atm
-base[repo]='https://github.com/NOAA-EMC/fv3atm'
-base[branch]='develop'
 
 ccpp-framework[repo]='https://github.com/NCAR/ccpp-framework'
 ccpp-framework[branch]='main'
