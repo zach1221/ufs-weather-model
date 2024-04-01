@@ -287,6 +287,27 @@ PASS -- TEST 'datm_cdeps_lnd_gswp3_intel' [03:40, 01:12](309 MB)
 PASS -- TEST 'datm_cdeps_lnd_era5_intel' [02:40, 01:04](449 MB)
 PASS -- TEST 'datm_cdeps_lnd_era5_rst_intel' [02:38, 00:47](451 MB)
 
+PASS -- COMPILE 'atml_intel' [50:39, 12:57]
+PASS -- TEST 'control_p8_atmlnd_sbs_intel' [13:05, 06:45](1640 MB)
+PASS -- TEST 'control_p8_atmlnd_intel' [13:05, 06:38](1626 MB)
+PASS -- TEST 'control_restart_p8_atmlnd_intel' [05:08, 03:27](848 MB)
+
+PASS -- COMPILE 'atmw_intel' [48:40, 12:52]
+PASS -- TEST 'atmwav_control_noaero_p8_intel' [05:38, 01:33](1633 MB)
+
+PASS -- COMPILE 'atmwm_intel' [41:35, 12:34]
+PASS -- TEST 'control_atmwav_intel' [05:07, 01:29](634 MB)
+
+PASS -- COMPILE 'atmaero_intel' [30:27, 11:09]
+PASS -- TEST 'atmaero_control_p8_intel' [08:44, 03:38](2947 MB)
+PASS -- TEST 'atmaero_control_p8_rad_intel' [10:48, 04:21](2998 MB)
+PASS -- TEST 'atmaero_control_p8_rad_micro_intel' [08:15, 04:34](3009 MB)
+
+PASS -- COMPILE 'atmaq_intel' [28:25, 10:48]
+
+PASS -- COMPILE 'atmaq_debug_intel' [20:34, 06:14]
+PASS -- TEST 'regional_atmaq_debug_intel' [25:19, 21:54](4530 MB)
+
 SYNOPSIS:
 Starting Date/Time: 20240328 08:57:30
 Ending Date/Time: 20240328 11:19:15
