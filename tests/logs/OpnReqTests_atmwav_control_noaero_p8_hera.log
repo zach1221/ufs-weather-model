@@ -1,6 +1,7 @@
 Tue Jun 13 16:03:47 UTC 2023
 Start Operation Requirement Test
 
+Compile bit elapsed time 607 seconds. -DAPP=ATMW -DCCPP_SUITES=FV3_GFS_v17_p8 -DMPI=ON -DCMAKE_BUILD_TYPE=Release
 Compile dbg elapsed time 182 seconds. -DAPP=ATMW -DCCPP_SUITES=FV3_GFS_v17_p8 -D32BIT=ON -DDEBUG=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Debug
 Compile std elapsed time 569 seconds. -DAPP=ATMW -DCCPP_SUITES=FV3_GFS_v17_p8 -D32BIT=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
 
