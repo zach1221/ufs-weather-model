@@ -1,20 +1,5 @@
 
 
-Submodule hashes used in testing:
- 37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
- 3d7067a523b8557058755289e4275f5f5c985daf CDEPS-interface/CDEPS (cdeps0.4.17-40-g3d7067a)
- 620e48fe75d92aa607af7e21f2d8691baddd2851 CICE-interface/CICE (CICE6.0.0-445-g620e48f)
- 624920ddbd819c76ec37591c24e872308201810e CMEPS-interface/CMEPS (cmeps_v0.4.1-2304-g624920d)
- cabd7753ae17f7bfcc6dad56daf10868aa51c3f4 CMakeModules (v1.0.0-28-gcabd775)
- 0fe9ba3020ad2f744ead7323bda414497aa33632 FV3 (remotes/origin/HEAD)
- 041422934cae1570f2f0e67239d5d89f11c6e1b7 GOCART (sdr_v2.1.2.6-119-g0414229)
- 35789c757766e07f688b4c0c7c5229816f224b09 HYCOM-interface/HYCOM (2.3.00-121-g35789c7)
- c8a7325c040b4cb1327c55c8248e8e66972239a5 MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-9878-gc8a7325c0)
- 0cd3e23ae5d35ef93e205e4d0c3b13ccc0d851f5 NOAHMP-interface/noahmp (v3.7.1-423-g0cd3e23)
- 4ffc47e10e3d3f3bbee50251aacb28b7e0165b92 WW3 (6.07.1-344-g4ffc47e1)
- a5561802021d89a9a1e2b52cb69393efcdc6f71c stochastic_physics (ufs-v2.0.0-199-ga556180)
-
-
 NOTES:
 [Times](Memory) are at the end of each compile/test in format [MM:SS](Size).
 The first time is for the full script (prep+run+finalize).
