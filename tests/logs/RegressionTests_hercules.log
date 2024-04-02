@@ -1,7 +1,7 @@
 ====START OF HERCULES REGRESSION TESTING LOG====
 
 UFSWM hash used in testing:
-f2f429a75f5bd0c831aa01c51a56d22c23d571ba
+5788b9196854f91fb7bc67580d6a002e2a62aa7c
 
 Submodule hashes used in testing:
  37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
@@ -48,19 +48,19 @@ The second time is specifically for the run phase.
 Times/Memory will be empty for failed tests.
 
 BASELINE DIRECTORY: /work/noaa/epic/hercules/UFS-WM_RT/NEMSfv3gfs/develop-20240315
-COMPARISON DIRECTORY: /work2/noaa/stmp/zshrader/stmp/zshrader/FV3_RT/rt_2956455
+COMPARISON DIRECTORY: /work2/noaa/stmp/zshrader/stmp/zshrader/FV3_RT/rt_3645040
 
 RT.SH OPTIONS USED:
 * (-a) - HPC PROJECT ACCOUNT: epic
 * (-l) - USE CONFIG FILE: rt.conf
 
-PASS -- COMPILE 'atm_dyn32_intel' [12:05, 10:12]
-PASS -- TEST 'control_flake_intel' [04:24, 02:57](706 MB)
+PASS -- COMPILE 'atm_dyn32_intel' [09:06, 07:35]
+PASS -- TEST 'control_flake_intel' [05:03, 02:54](716 MB)
 
 SYNOPSIS:
-Starting Date/Time: 20240402 11:52:13
-Ending Date/Time: 20240402 12:08:42
-Total Time: 00h:16m:37s
+Starting Date/Time: 20240402 13:50:13
+Ending Date/Time: 20240402 14:04:22
+Total Time: 00h:14m:18s
 Compiles Completed: 1/1
 Tests Completed: 1/1
 
