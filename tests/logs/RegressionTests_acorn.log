@@ -1,10 +1,6 @@
 
 
-NOTES:
-[Times](Memory) are at the end of each compile/test in format [MM:SS](Size).
-The first time is for the full script (prep+run+finalize).
-The second time is specifically for the run phase.
-Times/Memory will be empty for failed tests.
+
 
 BASELINE DIRECTORY: /lfs/h1/emc/nems/noscrub/emc.nems/RT/NEMSfv3gfs/develop-20240213
 COMPARISON DIRECTORY: /lfs/h2/emc/ptmp/brian.curtis/FV3_RT/rt_93964
