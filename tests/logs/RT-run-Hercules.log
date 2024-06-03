@@ -1,0 +1,304 @@
+hercules-login-1.hpc.msstate.edu
+Machine:  hercules     Account:  epic
+Linking /work2/noaa/epic/stmp/role-epic/stmp/role-epic/FV3_RT/rt_3131956 to /work/noaa/epic/role-epic/jenkins/workspace/s-weather-model_pipeline_PR-2229/tests/run_dir
+Run regression test in: /work2/noaa/epic/stmp/role-epic/stmp/role-epic/FV3_RT/rt_3131956
+No update needed to TESTS_FILE
+COMPILING s2swa_intel
+ATM_petlist_bounds: 0 149
+OCN_petlist_bounds: 150 169
+ICE_petlist_bounds: 170 179
+WAV_petlist_bounds: 180 199
+CHM_petlist_bounds: 0 143
+MED_petlist_bounds: 0 143
+AQM_petlist_bounds: 0 143
+LND_petlist_bounds: 
+UFS_tasks         : 200
+ecflow_server is NOT running on hercules-login-1.hpc.msstate.edu:11198
+Mon Apr 15 14:39:33 UTC 2024
+
+User "9698" attempting to start ecf server on "hercules-login-1.hpc.msstate.edu" using ECF_PORT "11198" and with:
+ECF_HOME     : "/work2/noaa/epic/stmp/role-epic/stmp/role-epic/FV3_RT/rt_3131956/ecflow_server"
+ECF_LOG      : "hercules-login-1.hpc.msstate.edu.11198.ecf.log"
+ECF_CHECK    : "hercules-login-1.hpc.msstate.edu.11198.check"
+ECF_CHECKOLD : "hercules-login-1.hpc.msstate.edu.11198.check.b"
+ECF_OUT      : "/dev/null"
+
+client version is Ecflow version(5.8.4) boost(1.78.0) compiler(gcc 11.3.1) protocol(JSON cereal 1.3.0) openssl(enabled) Compiled on Jul 10 2023 12:35:34
+Checking if the server is already running on hercules-login-1.hpc.msstate.edu and port 11198
+
+Backing up check point and log files
+
+OK starting ecFlow server...
+
+Placing server into RESTART mode...
+
+To view server on ecflow_ui - goto Servers/Manage Servers... and enter
+Name        : <unique ecFlow server name>
+Host        : hercules-login-1.hpc.msstate.edu
+Port Number : 11198
+
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
+ecflow tasks remaining: 2
