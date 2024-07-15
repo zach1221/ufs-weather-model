@@ -403,7 +403,7 @@ rocoto_create_compile_task() {
   fi
 
   NATIVE=""
-  BUILD_CORES=8
+  BUILD_NODES=1
   BUILD_WALLTIME="00:30:00"
   if [[ ${MACHINE_ID} == jet ]]; then
     BUILD_WALLTIME="02:00:00"
@@ -445,7 +445,7 @@ EOF
   fi
 
   cat << EOF >> "${ROCOTO_XML}"
-    <cores>${BUILD_CORES}</cores>
+     <nodes>${BUILD_NODES}:ppn=${TPN}</nodes>
     <walltime>${BUILD_WALLTIME}</walltime>
     <join>&RUNDIR_ROOT;/compile_${COMPILE_ID}.log</join>
     ${NATIVE}
