@@ -56,7 +56,7 @@ def rocoto_create_compile_task(MACHINE_ID,COMPILE_ID,ROCOTO_COMPILE_MAXTRIES,MAK
         ROCOTO_XML (str): Rocoto .xml filename to write to
     """
     NATIVE=""
-    BUILD_CORES="8"
+    BUILD_NODES="1" 
     BUILD_WALLTIME="00:30:00"
     if ( MACHINE_ID == 'jet' ):  BUILD_WALLTIME="02:00:00"
     if ( MACHINE_ID == 'hera'):  BUILD_WALLTIME="01:00:00"
@@ -79,7 +79,7 @@ command>
     if ( PARTITION != "" and MACHINE_ID != "hera" ):
             compile_task+=f"""    <partition>{PARTITION}</partition>
 """
-    compile_task+=f"""    <cores>{BUILD_CORES}</cores>
+    compile_task+=f"""   <nodes>{BUILD_NODES}:ppn=128</nodes>
     <walltime>{BUILD_WALLTIME}</walltime>
     <join>&RUNDIR_ROOT;/compile_{COMPILE_ID}.log</join>
     {NATIVE}
