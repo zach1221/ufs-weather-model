@@ -275,6 +275,7 @@ EOF
                COMPILE_WARNINGS+=" )"
             fi
           fi
+  
           TIME_FILE="${LOG_DIR}/compile_${COMPILE_ID}_timestamp.txt"
           if [[ -f "${TIME_FILE}" ]]; then
             while read -r times || [[ -n "${times}" ]]; do
